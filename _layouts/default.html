@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>{{ site.name }} :: {{ page.title }}</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>{{ site.name }}</h1>
+        <h2>{{ page.title }}</h2>
+        <a href="https://github.com/fpuhlig" class="button"><small>Follow me on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+        {{ content }}
+        </section>
+
+        <aside id="sidebar">
+          {% if site.pages != empty %}
+          <p>Seiten</p>
+          <ul class="pages">
+            {% for page in site.pages %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          {% if site.posts != empty %}
+          <p>Blog-Einträge</p>
+          <ul class="posts">
+            {% for post in site.posts %}
+              <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+
+          <p>Diese Seite verwendet das 'Architect'-Theme vom <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  </body>
+</html>
