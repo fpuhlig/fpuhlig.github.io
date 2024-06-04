@@ -11,32 +11,35 @@
 <div id="startScreen">
     <p>Bitte geben Sie die Namen der Spieler ein.</p>
 
-        <label for="playerA">Spieler A:</label>
-        <input type="text" id="playerA" required>
-        <label for="playerB">Spieler B:</label>
-        <input type="text" id="playerB" required>
-        <button onclick="startGame()" class="clickButton">Spiel starten</button>
+    <label for="playerA">Spieler A:</label>
+    <input type="text" id="playerA" required>
+    <label for="playerB" id="playerBLabel">Spieler B:</label>
+    <input type="text" id="playerB" required>
+    <label for="botCheckBox" id="botCheckBoxLabel">Bot</label>
+    <input id="botCheckBox" type="checkbox" onclick="checkBot()"></input>
+    <button onclick="startGame()" class="clickButton">Spiel starten</button>
+
 
 </div>
 <div id="gameScreen" style="display:none;">
-    <button type="button" onclick="resetGame()" class="clickButton">Neustarten</button>
+    <button type="button" onclick="resetGame()" class="clickButton">Board Zurücksetzen</button>
     <button type="button" onclick="location.reload()" class="clickButton">Namen ändern</button>
     <div id="playerInfo"></div>
     <table id="board">
         <tr>
-            <td><button onclick="makeMove(this, 0, 0)"></button></td>
-            <td><button onclick="makeMove(this, 0, 1)"></button></td>
-            <td><button onclick="makeMove(this, 0, 2)"></button></td>
+            <td><button onclick="makeMove(this, 0, 0)" id="button1"></button></td>
+            <td><button onclick="makeMove(this, 0, 1)" id="button2"></button></td>
+            <td><button onclick="makeMove(this, 0, 2)" id="button3"></button></td>
         </tr>
         <tr>
-            <td><button onclick="makeMove(this, 1, 0)"></button></td>
-            <td><button onclick="makeMove(this, 1, 1)"></button></td>
-            <td><button onclick="makeMove(this, 1, 2)"></button></td>
+            <td><button onclick="makeMove(this, 1, 0)" id="button4"></button></td>
+            <td><button onclick="makeMove(this, 1, 1)" id="button5"></button></td>
+            <td><button onclick="makeMove(this, 1, 2)" id="button6"></button></td>
         </tr>
         <tr>
-            <td><button onclick="makeMove(this, 2, 0)"></button></td>
-            <td><button onclick="makeMove(this, 2, 1)"></button></td>
-            <td><button onclick="makeMove(this, 2, 2)"></button></td>
+            <td><button onclick="makeMove(this, 2, 0)" id="button7"></button></td>
+            <td><button onclick="makeMove(this, 2, 1)" id="button8"></button></td>
+            <td><button onclick="makeMove(this, 2, 2)" id="button9"></button></td>
         </tr>
     </table>
     <div id="playerSymbols"></div>
